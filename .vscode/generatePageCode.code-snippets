@@ -1,0 +1,20 @@
+{
+  "Export Default Function with Metadata": {
+    "prefix": "edfmeta",
+    "body": [
+      "import React from 'react'",
+      "import { Metadata } from 'next'",
+      "import Page from '.'",
+      "",
+      "export const metadata: Metadata = {",
+      "  title: '${1:Page Title}',",
+      "  description: '${2:Page description}'",
+      "}",
+      "",
+      "export default function ${3:PageName}() {",
+      "  return <Page />",
+      "}"
+    ],
+    "description": "Create an export default function with Next.js metadata"
+  }
+}

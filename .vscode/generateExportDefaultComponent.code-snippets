@@ -1,0 +1,13 @@
+{
+  "Export Default Function": {
+    "prefix": "edf",
+    "body": [
+      "export default function ${1:Page}() {",
+      "  return (",
+			"    <div></div>",
+			"  )",
+      "}"
+    ],
+    "description": "Create an export default function"
+  }
+}
