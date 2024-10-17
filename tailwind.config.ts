@@ -9,13 +9,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+
+      },
       colors: {
         background: 'var(--background)',
-        foreground: 'var(--foreground)'
+        foreground: 'var(--foreground)',
+        'dblue': '#314CA3'
       }
     },
     fontFamily: {
-      'inter': ['Inter', 'sans-serif']
+      'inter': ['Inter', 'sans-serif'],
+      'poppins': ['Poppins', 'sans-serif'],
+      'lato': ['Lato', 'sans-serif']
     }
   },
   plugins: [
