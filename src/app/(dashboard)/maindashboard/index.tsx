@@ -15,8 +15,8 @@ function DashboardPage() {
   return (
     <div className="dashboard flex flex-col px-10 gap-6 h-full">
       {/* My cards and Recent transaction */}
-      <div className="flex gap-16">
-        <div className="cards-section w-[62%] flex flex-col">
+      <div className="flex flex-col xl:flex-row gap-16">
+        <div className="cards-section w-full xl:w-[62%] flex flex-col">
           <div className="py-3 flex justify-between">
             <SectionTitle title='My Cards'/>
             <div className="font-inter text-[17px] font-semibold self-end cursor-pointer">See ALL</div>
@@ -26,7 +26,7 @@ function DashboardPage() {
             <CreditCard card_holder='Nguyen Tuan Khoa' card_valid_date='12/25' card_number='3778 **** **** 1234' card_balance='15,000'/>
           </div>
         </div>
-        <div className="transactions-section w-[38%]">
+        <div className="transactions-section w-full xl:w-[38%]">
           <div className="py-3">
             <SectionTitle title='Recent Transactions'/>
           </div>
@@ -86,17 +86,19 @@ function DashboardPage() {
         </div>
       </div>
       {/* Weekly activity and Expense statistics */}
-      <div className="flex gap-16">
-        <div className="w-[62%] rounded-3xl flex flex-col">
+      <div className="flex flex-col xl:flex-row gap-16">
+        {/* Weekly Chart */}
+        <div className="w-full xl:w-[62%] rounded-3xl flex flex-col">
           <div className="py-3"><SectionTitle title='Weekly Activity'/></div>
           <div className="h-96 bg-white rounded-3xl pt-10 pb-6 px-6"><WeeklyChart/></div>
         </div>
-        <div className="w-[38%]">
+        {/* Quick tranfer */}
+        <div className="w-full xl:w-[38%]">
           <div className="py-3"><SectionTitle title='Quick Tranfer'/></div>
           <div className="h-96 bg-white rounded-3xl flex flex-col p-12">
-            <div className="recent-users flex h-2/3 justify-between px-10">
-              <div className="recent-user">
-                <div className="avatar h-2/3">
+            <div className="recent-users flex h-2/3 xl:justify-between px-0 sm:px-10 xl:px-0">
+              <div className="recent-user w-1/3 flex flex-col justify-center items-center">
+                <div className="avatar h-2/3 cursor-pointer">
                   <div className="ring-primary ring-offset-base-100 w-16 rounded-full ring ring-offset-2">
                     <Image
                       alt='user'
@@ -112,8 +114,8 @@ function DashboardPage() {
                   <div className="text-center text-[15px] font-semibold text-[#888EA2]">CEO</div>
                 </div>
               </div>
-              <div className="recent-user">
-                <div className="avatar h-2/3">
+              <div className="recent-user w-1/3 flex flex-col justify-center items-center">
+                <div className="avatar h-2/3 cursor-pointer">
                   <div className="ring-primary ring-offset-base-100 w-16 rounded-full ring ring-offset-2">
                     <Image
                       alt='user'
@@ -129,8 +131,8 @@ function DashboardPage() {
                   <div className="text-center text-[15px] font-semibold text-[#888EA2]">CEO</div>
                 </div>
               </div>
-              <div className="recent-user">
-                <div className="avatar h-2/3">
+              <div className="recent-user w-1/3 flex flex-col justify-center items-center">
+                <div className="avatar h-2/3 cursor-pointer">
                   <div className="ring-primary ring-offset-base-100 w-16 rounded-full ring ring-offset-2">
                     <Image
                       alt='user'
@@ -154,7 +156,7 @@ function DashboardPage() {
                   type="number"
                   placeholder="Type amount here"
                   className="input input-ghost w-full rounded-full
-                  outline-none border-none focus-within:outline-white bg-[#F4F4F6] font-semibold text-dblue"
+                  outline-none border-none focus-within:outline-white bg-[#F4F4F6] font-semibold text-black"
                   onChange={e => {
                     setAmount(e.target.value)
                   }}

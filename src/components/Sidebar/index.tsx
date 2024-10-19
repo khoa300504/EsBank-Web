@@ -18,24 +18,24 @@ export default function Sidebar() {
         <h2 className='font-poppins font-semibold text-2xl text-dblue hidden lg:block'>EsBank</h2>
       </div>
       {/* Sidebar menu */}
-      <ul className='flex flex-col gap-10 lg:gap-5 items-center lg:items-start font-inter text-lg text-[#888EA2] font-medium mb-32'>
-        <MenuItem img_url='img_home_02' img_alt='Home Icon' title='Dashboard'/>
-        <MenuItem img_url='img_transaction' img_alt='Transactions Icon' title='Transaction'/>
-        <MenuItem img_url='img_investment' img_alt='Investments Icon' title='Investment'/>
-        <MenuItem img_url='img_loan' img_alt='Loans Icon' title='Loan'/>
-        <MenuItem img_url='img_card' img_alt='CreditCard Icon' title='Credit Card'/>
-        <MenuItem img_url='img_user' img_alt='Account Icon' title='Account'/>
-        <MenuItem img_url='img_settings' img_alt='Setting Icon' title='Setting'/>
+      <ul className='flex flex-col gap-10 lg:gap-5 items-center lg:items-start font-inter text-lg text-[#888EA2] font-medium mb-56 lg:mb-40'>
+        <MenuItem key="dashboard" img_url='img_home_02' img_alt='Home Icon' title='Dashboard'/>
+        <MenuItem key="transaction" img_url='img_transaction' img_alt='Transactions Icon' title='Transaction'/>
+        <MenuItem key="investment" img_url='img_investment' img_alt='Investments Icon' title='Investment'/>
+        <MenuItem key="loan" img_url='img_loan' img_alt='Loans Icon' title='Loan'/>
+        <MenuItem key="credit-card" img_url='img_card' img_alt='CreditCard Icon' title='Credit Card'/>
+        <MenuItem key="account" img_url='img_user' img_alt='Account Icon' title='Account'/>
+        <MenuItem key="setting" img_url='img_settings' img_alt='Setting Icon' title='Setting'/>
       </ul>
       {/* Expand button */}
-      <button className="btn btn-circle bg-white flex lg:hidden outline-none w-8">
+      {/* <button className="btn btn-circle bg-white flex lg:hidden outline-none w-8">
         <Image
           alt='expand icon'
           src='/images/img_expand.svg'
           height={16}
           width={16}
         />
-      </button>
+      </button> */}
       {/* Theme toggle */}
       <label className="swap swap-rotate">
         <input type="checkbox" className="theme-controller" value="synthwave" />

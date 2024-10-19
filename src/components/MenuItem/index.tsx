@@ -9,6 +9,7 @@ interface MenuItemProps {
 }
 
 export default function MenuItem({ img_url, img_alt, title }: MenuItemProps) {
+
   return (
     <li className="menu-item">
       <Link href="" className='flex lg:px-4 w-full lg:py-3 gap-3 hover:text-[#314CA3]'>
