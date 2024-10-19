@@ -15,7 +15,8 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
-        'dblue': '#314CA3'
+        'dblue': '#314CA3',
+        'lgray': '#888EA2'
       }
     },
     fontFamily: {

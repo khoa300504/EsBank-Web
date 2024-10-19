@@ -22,7 +22,7 @@ export default function DashboardLayout({
       {/* Header and Content */}
       <div className="w-[90%] lg:w-[83%] xl:w-[85%] 2xl:w-[88%] flex flex-col relative">
         <Header/>
-        <div className="main-content bg-[#EEEEEE] h-full mt-[7.7rem] sm:mt-20">
+        <div className="main-content bg-[#F4F6F9] h-full mt-[7.7rem] sm:mt-20">
           {children}
         </div>
       </div>
