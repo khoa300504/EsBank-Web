@@ -1,10 +1,64 @@
-// 'use client'
+'use client'
+
 import MenuItem from '../MenuItem'
 import Image from 'next/image'
-// import React, { useState } from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 export default function Sidebar() {
-  // const [activeItem, setActiveItem] = useState('Dashboard')
+
+  const pathname = usePathname()
+  const [activeItem, setActiveItem] = useState(() => {
+    const path = pathname.split('/')[1]
+    switch (path) {
+    case 'transactions':
+      return 'Transaction'
+    case 'investments':
+      return 'Investment'
+    case 'loans':
+      return 'Loan'
+    case 'creditcards':
+      return 'Credit Card'
+    case 'accounts':
+      return 'Account'
+    case 'setting':
+      return 'Setting'
+    default:
+      return 'Dashboard'
+    }
+  })
+
+  useEffect(() => {
+    const path = pathname.split('/')[1]
+
+    switch (path) {
+    case 'transactions':
+      setActiveItem('Transaction')
+      break
+    case 'investments':
+      setActiveItem('Investment')
+      break
+    case 'loans':
+      setActiveItem('Loan')
+      break
+    case 'creditcards':
+      setActiveItem('Credit Card')
+      break
+    case 'accounts':
+      setActiveItem('Account')
+      break
+    case 'setting':
+      setActiveItem('Setting')
+      break
+    default:
+      setActiveItem('Dashboard')
+    }
+  }, [pathname])
+
+  const handleChangeIcon = useCallback((title: string) => {
+    setActiveItem(title)
+  }, [])
+
   return (
     <nav className="side-bar flex flex-col gap-[60px] py-7 fixed">
       {/* logo */}
@@ -19,13 +73,55 @@ export default function Sidebar() {
       </div>
       {/* Sidebar menu */}
       <ul className='flex flex-col gap-10 lg:gap-5 items-center lg:items-start font-inter text-lg text-lgray font-medium mb-56 lg:mb-40'>
-        <MenuItem key="dashboard" img_url='img_home_02' img_alt='Home Icon' title='Dashboard'/>
-        <MenuItem key="transaction" img_url='img_transaction' img_alt='Transactions Icon' title='Transaction'/>
-        <MenuItem key="investment" img_url='img_investment' img_alt='Investments Icon' title='Investment'/>
-        <MenuItem key="loan" img_url='img_loan' img_alt='Loans Icon' title='Loan'/>
-        <MenuItem key="credit-card" img_url='img_card' img_alt='CreditCard Icon' title='Credit Card'/>
-        <MenuItem key="account" img_url='img_user' img_alt='Account Icon' title='Account'/>
-        <MenuItem key="setting" img_url='img_settings' img_alt='Setting Icon' title='Setting'/>
+        <MenuItem
+          key="dashboard"
+          img_url={`img_home${activeItem === 'Dashboard' ? '_02' : ''}`}
+          img_alt='Home Icon'
+          title='Dashboard'
+          page_url='maindashboard'
+          handleChangeIcon = {handleChangeIcon}/>
+        <MenuItem
+          key="transaction"
+          img_url={`img_transaction${activeItem === 'Transaction' ? '_02' : ''}`}
+          img_alt='Transactions Icon'
+          title='Transaction'
+          page_url='transactions'
+          handleChangeIcon = {handleChangeIcon}/>
+        <MenuItem
+          key="investment"
+          img_url={`img_investment${activeItem === 'Investment' ? '_02' : ''}`}
+          img_alt='Investments Icon'
+          title='Investment'
+          page_url='investments'
+          handleChangeIcon = {handleChangeIcon}/>
+        <MenuItem
+          key="loan"
+          img_url={`img_loan${activeItem === 'Loan' ? '_02' : ''}`}
+          img_alt='Loans Icon'
+          title='Loan'
+          page_url='loans'
+          handleChangeIcon = {handleChangeIcon}/>
+        <MenuItem
+          key="credit-card"
+          img_url={`img_card${activeItem === 'Credit Card' ? '_02' : ''}`}
+          img_alt='CreditCard Icon'
+          title='Credit Card'
+          page_url='creditcards'
+          handleChangeIcon = {handleChangeIcon}/>
+        <MenuItem
+          key="account"
+          img_url={`img_user${activeItem === 'Account' ? '_02' : ''}`}
+          img_alt='Account Icon'
+          title='Account'
+          page_url='accounts'
+          handleChangeIcon = {handleChangeIcon}/>
+        <MenuItem
+          key="setting"
+          img_url={`img_settings${activeItem === 'Setting' ? '_02' : ''}`}
+          img_alt='Setting Icon'
+          title='Setting'
+          page_url='setting'
+          handleChangeIcon = {handleChangeIcon}/>
       </ul>
       {/* Expand button */}
       {/* <button className="btn btn-circle bg-white flex lg:hidden outline-none w-8">
