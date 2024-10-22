@@ -9,7 +9,7 @@ interface CardInfo {
 
 export default function CreditCard({ card_holder, card_valid_date, card_number, card_balance }: CardInfo) {
   return (
-    <div className="credit-card flex flex-col h-60 gap-6 bg-dblue text-white w-[48%] rounded-3xl">
+    <div className="credit-card flex flex-col h-60 gap-6 bg-dblue text-white w-4/5 self-center sm:w-[48%] rounded-3xl">
       {/* card-section-1 */}
       <div className="h-1/3 flex items-center justify-between px-6 pt-6">
         <div className="flex flex-col justify-start">

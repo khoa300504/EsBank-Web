@@ -24,7 +24,7 @@ export default function MenuItem({ img_url, img_alt, title, page_url, handleChan
             className='w-[24px] h-[24px]'
           />
         </span>
-        <span className='hidden lg:block'>{title}</span>
+        <span className='flex sm:hidden lg:block'>{title}</span>
       </Link>
     </li>
   )

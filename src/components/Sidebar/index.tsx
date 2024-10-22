@@ -60,9 +60,9 @@ export default function Sidebar() {
   }, [])
 
   return (
-    <nav className="side-bar flex flex-col gap-[60px] py-7 fixed">
+    <nav className="side-bar flex flex-col gap-[60px] py-7">
       {/* logo */}
-      <div className="logo flex items-center gap-3 justify-center">
+      <div className="logo hidden sm:flex items-center gap-3 justify-center">
         <Image
           alt='Logo'
           src='/images/img_react.svg'
@@ -72,7 +72,7 @@ export default function Sidebar() {
         <h2 className='font-poppins font-semibold text-2xl text-dblue hidden lg:block'>EsBank</h2>
       </div>
       {/* Sidebar menu */}
-      <ul className='flex flex-col gap-10 lg:gap-5 items-center lg:items-start font-inter text-lg text-lgray font-medium mb-56 lg:mb-40'>
+      <ul className='flex flex-col gap-10 lg:gap-5 items-center lg:items-start font-inter text-lg text-lgray font-medium mb-52 lg:mb-40 justify-center'>
         <MenuItem
           key="dashboard"
           img_url={`img_home${activeItem === 'Dashboard' ? '_02' : ''}`}

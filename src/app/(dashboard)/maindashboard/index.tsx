@@ -8,12 +8,11 @@ import { useState } from 'react'
 
 const WeeklyChart = dynamic(() => import('~/components/BarChart/index'), { ssr: false })
 
-
 function DashboardPage() {
   const [amount, setAmount] = useState('')
 
   return (
-    <div className="dashboard flex flex-col px-10 gap-6 h-full">
+    <div className='dashboard sm:flex flex-col px-10 gap-6 h-full'>
       {/* My cards and Recent transaction */}
       <div className="flex flex-col xl:flex-row gap-16">
         <div className="cards-section w-full xl:w-[62%] flex flex-col">
@@ -21,7 +20,7 @@ function DashboardPage() {
             <SectionTitle title='My Cards'/>
             <div className="font-inter text-[17px] font-semibold self-end cursor-pointer">See ALL</div>
           </div>
-          <div className="cards flex justify-between">
+          <div className="cards flex flex-col sm:flex-row gap-5 justify-between">
             <CreditCard card_holder='Nguyen Tuan Khoa' card_valid_date='12/25' card_number='3778 **** **** 1234' card_balance='7,777'/>
             <CreditCard card_holder='Nguyen Tuan Khoa' card_valid_date='12/25' card_number='3778 **** **** 1234' card_balance='15,000'/>
           </div>
@@ -154,7 +153,7 @@ function DashboardPage() {
               <div className="w-[70%] self-center relative">
                 <input
                   type="number"
-                  placeholder="Type amount here"
+                  placeholder="Amount"
                   className="input input-ghost w-full rounded-full
                   outline-none border-none focus-within:outline-white bg-[#F4F4F6] font-semibold text-black"
                   onChange={e => {

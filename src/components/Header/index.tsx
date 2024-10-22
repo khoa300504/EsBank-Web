@@ -2,19 +2,32 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
-export default function Header() {
+interface HeaderProps {
+  handleToggleMenu: () => void
+}
+
+export default function Header({ handleToggleMenu }: HeaderProps) {
   const [searchText, setSearchText] = useState('')
 
   return (
-    <div className="header flex flex-col-reverse md:flex-row items-center border-b py-3 px-5 fixed top-0 right-0 w-[inherit] bg-white">
-      <div className="w-1/5 md:w-2/5 font-inter text-[28px] text-black font-semibold flex items-center justify-start sm:justify-center gap-3">
+    <div className="header flex flex-col-reverse md:flex-row items-center border-b py-3 px-1 sm:px-5 fixed top-0 right-0 w-[inherit] bg-white">
+      <div className="w-1/5 md:w-2/5 font-inter text-[28px] text-black font-semibold flex items-center justify-start sm:justify-center gap-1 sm:gap-3">
         {/* <div className="">
         </div> */}
         <div className="">Overview</div>
       </div>
       <div className="w-full sm:w-4/5 md:w-3/5 flex justify-between sm:justify-end items-center gap-3 md:gap-7 pr-1 md:pr-6">
+        <div className="cursor-pointer flex sm:hidden" onClick={() => handleToggleMenu()}>
+          <Image
+            alt=''
+            src='/images/img_menu.svg'
+            height={24}
+            width={24}
+          />
+        </div>
         {/* Search */}
-        <label className="input flex items-center gap-3 bg-[#EEEEEE] hover:bg-[#e3e1e1] focus-within:outline-offset-0 border-none rounded-3xl w-72 relative">
+        <label className="input flex items-center gap-3 bg-[#EEEEEE] hover:bg-[#e3e1e1]
+          focus-within:outline-offset-0 border-none rounded-3xl w-56 sm:w-72 relative">
           <Image
             alt='search icon'
             src='/images/img_search.svg'
