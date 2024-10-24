@@ -10,7 +10,7 @@ export default function Header({ handleToggleMenu }: HeaderProps) {
   const [searchText, setSearchText] = useState('')
 
   return (
-    <div className="header flex flex-col-reverse md:flex-row items-center border-b py-3 px-1 sm:px-5 fixed top-0 right-0 w-[inherit] bg-white">
+    <div className="header flex flex-col-reverse md:flex-row items-center border-b py-3 px-1 sm:px-5 fixed top-0 right-0 w-[inherit] bg-white z-50">
       <div className="w-1/5 md:w-2/5 font-inter text-[28px] text-black font-semibold flex items-center justify-start sm:justify-center gap-1 sm:gap-3">
         {/* <div className="">
         </div> */}

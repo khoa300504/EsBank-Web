@@ -1,52 +1,39 @@
 import Image from 'next/image'
+import KeyMetric from '~/components/KeyMetric'
 // import StatisticsInvestmentChart from '~/components/DotLineChart'
 import SectionTitle from '~/components/SectionTitle'
 
 function InvestmentsPage() {
   return (
-    <div className="investments flex flex-col w-full px-10 gap-7 h-full">
+    <div className="investments flex flex-col px-10 gap-7">
       {/* Overview */}
-      <div className="flex mt-7 font-inter gap-[30px]">
-        <div className="flex w-1/3  items-center gap-[14px] p-6 bg-white rounded-3xl">
-          <div className="px-5 bg-[#F4F4F6] h-full flex items-center rounded-full cursor-pointer">
-            <Image
-              alt=''
-              src='/images/img_money.svg'
-              width={31}
-              height={31}
-            />
+      <div className="hidden lg:flex mt-7 font-inter gap-[30px]">
+        <KeyMetric img_url='img_money' title='Total Invested Amount' data='$150,000' width='1/3'/>
+        <KeyMetric img_url='img_investment_02' title='Number of Investments' data='1,250' width='1/3'/>
+        <KeyMetric img_url='img_income' title='Rate of Return' data='+5.80%' width='1/3'/>
+      </div>
+      <div className="flex lg:hidden mt-7 font-inter">
+        <div className="carousel w-full">
+          <div id="slide1" className="carousel-item relative w-full">
+            <KeyMetric img_url='img_money' title='Total Invested Amount' data='$150,000' width='full'/>
+            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+              <a href="#slide3" className="btn btn-circle">❮</a>
+              <a href="#slide2" className="btn btn-circle">❯</a>
+            </div>
           </div>
-          <div className="flex flex-col gap-[6px]">
-            <div className="text-base text-lgray">Total Invested Amount</div>
-            <div className="text-xl text-dblue font-semibold">$150,000</div>
+          <div id="slide2" className="carousel-item relative w-full">
+            <KeyMetric img_url='img_investment_02' title='Number of Investments' data='1,250' width='full'/>
+            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+              <a href="#slide1" className="btn btn-circle">❮</a>
+              <a href="#slide3" className="btn btn-circle">❯</a>
+            </div>
           </div>
-        </div>
-        <div className="flex w-1/3 justify-start items-center gap-[14px] p-6 bg-white rounded-3xl">
-          <div className="px-5 bg-[#F4F4F6] h-full flex items-center rounded-full cursor-pointer">
-            <Image
-              alt=''
-              src='/images/img_money_tranfer.svg'
-              width={31}
-              height={31}
-            />
-          </div>
-          <div className="flex flex-col gap-[6px]">
-            <div className="text-base text-lgray">Number of Investments</div>
-            <div className="text-xl text-dblue font-semibold">1,250</div>
-          </div>
-        </div>
-        <div className="flex w-1/3 justify-start items-center gap-[14px] p-6 bg-white rounded-3xl">
-          <div className="px-5 bg-[#F4F4F6] h-full flex items-center rounded-full cursor-pointer">
-            <Image
-              alt=''
-              src='/images/img_income.svg'
-              width={31}
-              height={31}
-            />
-          </div>
-          <div className="flex flex-col gap-[6px]">
-            <div className="text-base text-lgray">Rate of Return</div>
-            <div className="text-xl text-dblue font-semibold">+5.80%</div>
+          <div id="slide3" className="carousel-item relative w-full">
+            <KeyMetric img_url='img_income' title='Rate of Return' data='+5.80%' width='full'/>
+            <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+              <a href="#slide2" className="btn btn-circle">❮</a>
+              <a href="#slide1" className="btn btn-circle">❯</a>
+            </div>
           </div>
         </div>
       </div>

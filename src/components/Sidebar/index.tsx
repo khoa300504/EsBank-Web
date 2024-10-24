@@ -64,10 +64,10 @@ export default function Sidebar() {
       {/* logo */}
       <div className="logo hidden sm:flex items-center gap-3 justify-center">
         <Image
-          alt='Logo'
-          src='/images/img_react.svg'
-          width={40}
-          height={40}
+          src='/images/img_new_logo.svg'
+          alt='React Logo'
+          width={31}
+          height={31}
         />
         <h2 className='font-poppins font-semibold text-2xl text-dblue hidden lg:block'>EsBank</h2>
       </div>

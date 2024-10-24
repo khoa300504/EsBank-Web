@@ -42,7 +42,7 @@ export default function CreditCard({ card_holder, card_valid_date, card_number, 
         <div className="">
           <Image
             alt='Logo'
-            src='/images/img_light_react.svg'
+            src='/images/img_new_logo.svg'
             height={30}
             width={30}
           />
